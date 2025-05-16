@@ -1,0 +1,13 @@
+services:
+  app:
+    image: python-docker-uv-app:latest
+    env_file:
+      - .env
+    container_name: python-docker-uv-app
+    working_dir: /app
+# don't need this for now... 
+#    volumes:
+#      - .:/app
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "src.python_docker_uv_app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
