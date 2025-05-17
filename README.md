@@ -22,6 +22,13 @@ The project uses a multi-stage Dockerfile to build and deploy both a model, and 
   * ingester writer
   * classifier
 
+## Using uv package manager to lock in versions
+If the pyproject.toml file is updated, e.g. python version, library version, you can re-run uv lock to create the lock file, and push it. 
+
+```shell
+uv lock
+```
+
 ## Build the model
 
 The model can be built using the following:
