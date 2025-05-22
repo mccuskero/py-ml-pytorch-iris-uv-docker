@@ -10,7 +10,7 @@ build-model:
 	docker build -t $(PROJECT_NAME_MODEL) -f Dockerfile.model .
 
 train-model:
-	docker run --name $(PROJECT_NAME_MODEL) -v /Users/owenmccusker/Documents/dev/python/py-ml-torch/model:/app/model $(PROJECT_NAME_MODEL):latest
+	docker run --name $(PROJECT_NAME_MODEL) -v ./model:/app/model $(PROJECT_NAME_MODEL):latest
 
 rm-model:
 	docker rm $(PROJECT_NAME_MODEL)

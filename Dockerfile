@@ -45,4 +45,5 @@ RUN chown -R clf_user:clf_user /app
 USER clf_user
 
 # Run the application
-CMD ["uvicorn", "src.python_docker_uv_app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+#CMD ["uvicorn", "src.python_docker_uv_app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.iris_classifier_api.main:app", "--host", "0.0.0.0", "--port", "8000"]

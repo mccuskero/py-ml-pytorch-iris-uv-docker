@@ -12,7 +12,7 @@ uv lock
 
 ## Build the model
 
-The model can be built using the following:
+The model can be built using the following, from root project directory (needs access to ./model to create model file):
 
 ```shell
 make build-model

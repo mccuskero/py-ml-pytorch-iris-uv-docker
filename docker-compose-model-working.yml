@@ -9,6 +9,6 @@ services:
     container_name: python-pytorch-app-model
     working_dir: /app
     volumes:
-      - /Users/owenmccusker/Documents/dev/python/py_ml_pytorch/:/app/
+      - ./:/app/
     command: ["python", "src/python_docker_uv_app/model.py"]
 

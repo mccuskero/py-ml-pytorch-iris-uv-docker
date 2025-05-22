@@ -31,3 +31,4 @@ View the raw content of this file to understand the format.
 ### Done ✓
 
 - [x] Create my first TODO.md
+- [x] update project structure... need app dir, and also, modules, in src...
