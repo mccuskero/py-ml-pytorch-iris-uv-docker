@@ -2,28 +2,9 @@
 
 The project uses a multi-stage Dockerfile to build and deploy both a model, and then when the classifier image is created, it is loaded from the local drive and used.
 
-## TODO
-
-* Move to python 3.13? (verify ML libs)
-* Update user name
-* Pass in args to Dockerfile for base images
-* start to refactor for image promcessing
-  * <https://dev.to/code_jedi/machine-learning-model-deployment-with-fastapi-and-docker-llo>
-  * <https://medium.com/@mingc.me/deploying-pytorch-model-to-production-with-fastapi-in-cuda-supported-docker-c161cca68bb8>
-* standalone classifier example - read images, and write output
-  * uv.lock all ML depdencies
-  * store the model statically? but using endpoint later for update?
-    * perhaps it is better to just bundle the model with classifer image? and version
-  * work on classifier api (multi classifier?)
-  * define endpoints(update model/version)
-  * get stats
-  * predict
-* break apart into two separate docker containers in one pod
-  * ingester writer
-  * classifier
-
 ## Using uv package manager to lock in versions
-If the pyproject.toml file is updated, e.g. python version, library version, you can re-run uv lock to create the lock file, and push it. 
+
+If the pyproject.toml file is updated, e.g. python version, library version, you can re-run uv lock to create the lock file, and push it.
 
 ```shell
 uv lock
