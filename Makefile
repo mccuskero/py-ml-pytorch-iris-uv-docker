@@ -6,11 +6,11 @@ PROJECT_NAME_MODEL := python-pytorch-app-model
 COMPOSE_FILE_MODEL := docker-compose-model.yml
 
 # docker image commands for model training
-build-model:
+docker-build-model:
 	docker build -t $(PROJECT_NAME_MODEL) -f Dockerfile.model .
 
-train-model:
-	docker run --name $(PROJECT_NAME_MODEL) -v ./model:/app/model $(PROJECT_NAME_MODEL):latest
+docker-train-model:
+	docker run --name $(PROJECT_NAME_MODEL) -v ./data/model:/app/data/model $(PROJECT_NAME_MODEL):latest
 
 rm-model:
 	docker rm $(PROJECT_NAME_MODEL)
@@ -26,7 +26,7 @@ down-model:
 	docker-compose -f $(COMPOSE_FILE_MODEL) down
 
 # Dockerfile commands a new image with the build	
-build:
+docker-build:
 	docker build -t $(PROJECT_NAME):latest .
 
 run:
@@ -55,5 +55,17 @@ restart-classifier: down-classifier up-classifier
 
 logs-classifier:
 	docker-compose -f $(COMPOSE_FILE) logs -f
+
+# clean up all the docker images and containers
+# if you get errors about disk beging full, try this, clean-all, and/or clean-images
+clean:
+	@rm -f docker-build*
+
+clean-all:
+	@make clean
+	@make clean-images
+
+clean-images:
+	@docker system prune -a --filter label=project-name="$(PROJECT_NAME)" -f
 
 .PHONY: build up down restart logs

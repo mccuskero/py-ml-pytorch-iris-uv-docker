@@ -13,5 +13,5 @@ model = RandomForestClassifier()
 model.fit(X, y)
 
 # Save the trained model
-joblib.dump(model, '/app/model/iris_model.joblib.test')
+joblib.dump(model, '/app/data/model/iris_model.joblib')
    

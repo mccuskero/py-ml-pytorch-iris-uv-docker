@@ -18,7 +18,7 @@ app = FastAPI()
 iris = load_iris()
 
 # Load the trained model
-model = joblib.load('/app/model/iris_model.joblib')
+model = joblib.load('/app/data/model/iris_model.joblib')
 
 class HealthCheck(BaseModel):
     """Response model for health check"""

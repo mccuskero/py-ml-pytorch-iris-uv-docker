@@ -46,4 +46,4 @@ USER model_user
 
 # Run the application
 # CMD ["python", "src/python_docker_uv_app/model.py"]
-CMD ["python", "app/iris_classifier_model/main.py"]
+CMD ["python", "app/iris_classifier_model_trainer/main.py"]
