@@ -1,8 +1,8 @@
 # Define variables
-PROJECT_NAME := python-pytorch-app
+PROJECT_NAME := py-pytorch-clf-api
 COMPOSE_FILE := docker-compose.yml
 DOCKER_IMAGE := $(PROJECT_NAME)-image
-PROJECT_NAME_MODEL := python-pytorch-app-model
+PROJECT_NAME_MODEL := py-pytorch-clf-model
 COMPOSE_FILE_MODEL := docker-compose-model.yml
 
 # docker image commands for model training
