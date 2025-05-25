@@ -5,14 +5,17 @@
 # A pre-trained machine learning model is loaded using joblib.
 # NumPy is used for numerical data processing and manipulation.
 
-from fastapi import FastAPI, status
-from pydantic import BaseModel
-import joblib
-import numpy as np
 import os
 import sys
-import torch
+from loguru import logger
+from fastapi import FastAPI, status
+from pydantic import BaseModel
 from sklearn.datasets import load_iris
+import joblib
+import numpy as np
+import torch
+
+logger.info("Starting the py-pytorch-clf-api Iris classifier API service")
 
 app = FastAPI()
 iris = load_iris()
